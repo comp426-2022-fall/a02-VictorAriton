@@ -19,6 +19,13 @@ if (args.h) {
     process.exit(0)
     }
 
+    const tz = momentTimezone.tz.guess();
+
+var timezone = args.t || timezone;
+timezone = encodeURIComponent(tz)
+
+
+
 const args = minimist(process.argv.slice(2));
 
 const timezone = moment.tz.guess()
@@ -51,4 +58,3 @@ if (day == 0) {
   } else {
     console.log(printing + "tomorrow.")
   }
-  
