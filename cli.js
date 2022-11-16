@@ -19,7 +19,6 @@ if (args.h) {
     process.exit(0)
     }
 
-    const tz = momentTimezone.tz.guess();
 
 
 
@@ -27,7 +26,7 @@ if (args.h) {
 
 const args = minimist(process.argv.slice(2));
 
-const timezone = moment.tz.guess()
+const timezone = moment.tz.guess();
 
 const latitude = args.n || args.s * -1;
 
