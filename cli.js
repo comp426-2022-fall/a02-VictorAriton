@@ -3,11 +3,9 @@
 import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 import minimist from 'minimist';
-import fs from 'fs';
 
-
+// Initialize args first
 const args = minimist(process.argv.slice(2));
-
 
 if (args.h) {
 	
@@ -21,13 +19,7 @@ if (args.h) {
     `)	
     process.exit(0)
     }
-
-
-
-
-
-
-
+//From the imported moment, create variable timezone
     let timezone = moment.tz.guess();
     if (args.z) {
         timezone = args.z 
@@ -35,9 +27,8 @@ if (args.h) {
     timezone = moment.tz.guess();
     }
 
-
+//Create latitude and longitdue
 const latitude = args.n || args.s * -1;
-
 const longitude = args.e || args.w * -1;
 
 
@@ -46,7 +37,7 @@ var day = 1;
 if (args.d != undefined) {
 	day = args.d;
 }
-
+//Take API data, using latitude, longitude and timezone, then fetch url
 const url = "https://api.open-meteo.com/v1/forecast?" + "latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&current_weather=true&timezone=" + timezone;
 const response = await fetch(url);
 const data = await response.json();
@@ -56,7 +47,7 @@ if (args.j) {
 	process.exit(0);
 }
 
-
+//This can be simplified down but for what it accomplishes it is good enough LOL
 if (day == 0) {
     console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
       if (data.daily.precipitation_hours[0] != 0) {
