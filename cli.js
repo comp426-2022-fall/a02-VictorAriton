@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import momentTimezone from 'moment-timezone';
+import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 import minimist from 'minimist';
 import fs from 'fs';
@@ -34,7 +34,7 @@ if (args.h) {
     } else {
     timezone = moment.tz.guess();
     }
-    
+
 
 const latitude = args.n || args.s * -1;
 
