@@ -20,3 +20,6 @@ if (args.h) {
     }
 
 const args = minimist(process.argv.slice(2));
+
+const timezone = moment.tz.guess()
+
