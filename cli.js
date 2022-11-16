@@ -21,8 +21,7 @@ if (args.h) {
 
     const tz = momentTimezone.tz.guess();
 
-var timezone = args.t || timezone;
-timezone = encodeURIComponent(tz)
+
 
 
 
