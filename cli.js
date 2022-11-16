@@ -52,9 +52,25 @@ if (args.j) {
 
 
 if (day == 0) {
-    console.log(printing + "today.")
+    console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
+      if (data.daily.precipitation_hours[0] != 0) {
+          console.log("You might need your galoshes") 
+      } else {
+          console.log("You will not need your galoshes")
+      }	
   } else if (day > 1) {
-    console.log(printing + "in " + day + " days.")
+    console.log("in " + days + " days, the precipitation hour is " + data.daily.precipitation_hours[days - 1] + ".")
+      if (data.daily.precipitation_hours[days-1] != 0) {
+          console.log("You might need your galoshes") 
+      } else {
+          console.log("You will not need your galoshes")
+      }
   } else {
-    console.log(printing + "tomorrow.")
+    console.log("tomorrow precipitation hour is " + data.daily.precipitation_hours[1] + ".")
+      if (data.daily.precipitation_hours[1] != 0) {
+          console.log("You might need your galoshes")
+      } else {
+          console.log("You will not need your galoshes")
+      }
   }
+
