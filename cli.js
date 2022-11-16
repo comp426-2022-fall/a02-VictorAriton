@@ -6,6 +6,9 @@ import minimist from 'minimist';
 import fs from 'fs';
 
 
+const args = minimist(process.argv.slice(2));
+
+
 if (args.h) {
 	
     console.log(`Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
@@ -24,7 +27,6 @@ if (args.h) {
 
 
 
-const args = minimist(process.argv.slice(2));
 
 const timezone = moment.tz.guess();
 
