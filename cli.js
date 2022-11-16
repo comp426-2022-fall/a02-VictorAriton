@@ -23,3 +23,7 @@ const args = minimist(process.argv.slice(2));
 
 const timezone = moment.tz.guess()
 
+const latitude = args.n || args.s * -1;
+
+const longitude = args.e || args.w * -1;
+
